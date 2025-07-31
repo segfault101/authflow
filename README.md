@@ -19,8 +19,13 @@ Practice -> Resources : Cardiac PET Scan
 
 Availity
 
-cls6@hiisight.com
-July@2025
+uname : charan310
+
+pass : July@2025
+
+email : cls6@hiisight.com
+
+
 
 phone num: having 35 in it
 
