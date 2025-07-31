@@ -45,7 +45,5 @@ Carelon@2025
 
 <img width="573" height="414" alt="image" src="https://github.com/user-attachments/assets/08a0efb7-76d2-4d22-b2c8-7ddd49ab3444" />
 
-<img width="573" height="414" alt="image" src="https://github.com/user-attachments/assets/77d44f56-0b00-4d92-8f21-4fa93f518966" />
-
 
 
