@@ -4,6 +4,8 @@ CLS Cardiology.txt
 
 Z:\CALLERS\ALL PROVIDER INFORMATION_UPDATED
 
+Z:\2025\7.July\PRODUCTION\CLS Cardiology\PET Auth
+
 /////////////////////////////////////
 
 https://txclstf6p3vy7rz5judqcxapp.ecwcloud.com/mobiledoc/jsp/webemr/login/newLogin.jsp?isLogout=yes
