@@ -14,7 +14,6 @@ https://txclstf6p3vy7rz5judqcxapp.ecwcloud.com/mobiledoc/jsp/webemr/login/newLog
 
 Benefits
 Username: benefits.hiisight
-Password: Pbhoustonbilling@2025
 
 Practice -> Resources : Cardiac PET Scan
 
