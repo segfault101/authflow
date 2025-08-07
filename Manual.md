@@ -11,9 +11,8 @@ Z:\2025\7.July\PRODUCTION\CLS Cardiology\PET Auth
 
 https://txclstf6p3vy7rz5judqcxapp.ecwcloud.com/mobiledoc/jsp/webemr/login/newLogin.jsp?isLogout=yes
 
-
-Benefits
-Username: benefits.hiisight
+benefits.hiisight
+Pbhoustonbilling@2025
 
 Practice -> Resources : Cardiac PET Scan
 
