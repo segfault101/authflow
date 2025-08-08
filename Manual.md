@@ -47,4 +47,24 @@ Carelon@2025
 <img width="573" height="414" alt="image" src="https://github.com/user-attachments/assets/08a0efb7-76d2-4d22-b2c8-7ddd49ab3444" />
 
 
+//////////////////////////////////////////////////
+
+aetna & evcore
+
+https://myevicoreportal.medsolutions.com/
+
+mca310 August@2025
+
+mca@hiisight.com
+
+
+
+
+
+<img width="586" height="218" alt="Screenshot 2025-08-08 124023" src="https://github.com/user-attachments/assets/5bd8e20f-0ef3-4b00-aed5-c2ce63bca7c6" />
+<img width="712" height="389" alt="Screenshot 2025-08-08 123809" src="https://github.com/user-attachments/assets/a726a2ea-4280-4710-b742-415bc66b93a1" />
+<img width="529" height="627" alt="Screenshot 2025-08-08 123550" src="https://github.com/user-attachments/assets/3fac1768-4d1d-4715-8698-dbcfc4e2d3b5" />
+
+
+
 
