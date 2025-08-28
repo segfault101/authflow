@@ -3,7 +3,7 @@ import time
 
 def run(playwright: Playwright):
     browser = playwright.chromium.launch(headless=False)
-    ecwpage = browser.new_page()
+    ecwpage = browser.new_page(no_viewport=True)
 
     ecwpage.goto("https://txclstf6p3vy7rz5judqcxapp.ecwcloud.com/mobiledoc/jsp/webemr/login/newLogin.jsp")
 
@@ -53,15 +53,29 @@ def run(playwright: Playwright):
     ecwpage.fill("#resourceScheduleIpt2", "pet")
     ecwpage.locator('[id="613181"]').click()
 
+    # ecwpage.get_by_role("row", name=":15 AM   06:15 AM").locator("div").click()
+    # ecwpage.get_by_role("row", name=":15 AM   06:15 AM").locator("div").click(button="right")
+    # ecwpage.locator("#undefined div").nth(4).click(button="right")
+    # ecwpage.locator("span").filter(has_text="Print Schedule").click()
+    # ecwpage.locator("#printProvidersDiv button").click()
+    # ecwpage.locator("#printProvidersDiv input[type=\"text\"]").fill("pet")
+    # ecwpage.get_by_label("eClinicalWorks").get_by_label("Cardiac PET Scan").check()
+    # ecwpage.get_by_label("Print General Notes").check()
+    # ecwpage.locator("#billingClaimBtn9").click()
+    # ecwpage.locator("#billingClaimBtn9").click()
+    # ecwpage.locator("#printScheduleBtn2").click()
+
+    #ecwpage.wait_for_selector("#enc:11856282")
+
+    elements = ecwpage.locator('[id^="enc"]')
+    count = elements.count()
+    print(f"Found {count} elements")
+    for i in range(count):
+        element_id = elements.nth(i).get_attribute("id")
+        print(element_id)
+
     ecwpage.pause()
 
 with sync_playwright() as playwright:
     run(playwright)
 
-
-
------------------------------------------------------
-
-python .\test_example.py --headed
-
-python -m playwright codegen https://txclstf6p3vy7rz5judqcxapp.ecwcloud.com/mobiledoc/jsp/webemr/index.jsp#/mobiledoc/jsp/webemr/scheduling/resourceSchedule.jsp
