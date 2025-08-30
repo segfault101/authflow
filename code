@@ -73,6 +73,8 @@ def run(playwright: Playwright):
     for i in range(count):
         element_id = elements.nth(i).get_attribute("id")
         print(element_id)
+        ecwpage.locator(f'[id="{element_id}"]').dblclick()
+        ecwpage.pause()
 
     ecwpage.pause()
 
