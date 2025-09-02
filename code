@@ -68,8 +68,8 @@ def run(playwright: Playwright):
     #ecwpage.locator('[data-bb-handler="Yes"]').click()
     #ecwpage.click("#allProviders")
 
-    dp = ecwpage.locator('.ui-datepicker-calendar').first
-    dp.locator('td[data-month="8"][data-year="2025"] a[data-date="2"]').click()
+    # dp = ecwpage.locator('.ui-datepicker-calendar').first
+    # dp.locator('td[data-month="8"][data-year="2025"] a[data-date="2"]').click()
 
 
     # --- Calendar waits: target the actual visible events, not hidden containers ---
@@ -97,26 +97,36 @@ def run(playwright: Playwright):
         except Exception:
             pass
 
+        try:
+            # ecwpage.get_by_role("button", name="Cancel").wait_for(state="visible").click()
+            ecwpage.locator("button.btn.btn-xs.mt10.mr10.commonButton.ng-binding.ng-scope.btn-lgrey").wait_for(state="visible", timeout=7000)
+            ecwpage.locator("button.btn.btn-xs.mt10.mr10.commonButton.ng-binding.ng-scope.btn-lgrey").click()
+        except:
+            print("No email missing dialog")
+            pass
+
         #ecwpage.pause()
 
         # If a dialog/panel opens, wait for something meaningful here (example):
-        # ecwpage.locator("#newApptDialog").wait_for(state="visible", timeout=15000)
+        ecwpage.locator("#newApptDialog").wait_for(state="visible", timeout=15000)
         # span = ecwpage.locator("#visit-status-lookupBtn1").nth(1)
         # bg = span.evaluate("el => getComputedStyle(el).backgroundColor")
         # print(bg)
 
-        # scope to the visible modal if needed:
-        modal = ecwpage.locator('.modal.in').first
+        # All "visit status" color swatches (the colored <span> inside the left button)
+        swatch = ecwpage.locator('button#visit-status-lookupBtn1 >> span.visit-color-box-disable')
 
-        # grab the SECOND button with that (duplicated) id
-        second_btn = modal.locator('button#visit-status-lookupBtn1').nth(1)
+        count = swatch.count()
+        print("Found swatches:", count)
+        # if count < 2:
+            # raise RuntimeError(f"Only found {count} swatch(es). The 'second' one isn't in the DOM yet.")
 
-        # its color is set on the child span.visit-color-box-disable
-        swatch = second_btn.locator('span.visit-color-box-disable')
-        expect(swatch).to_be_visible(timeout=20000)
-
+        # Read the computed background color of the SECOND swatch (index 1)
         color = swatch.evaluate("el => getComputedStyle(el).backgroundColor")
-        print("(Second) visit status color:", color)
+        print("visit status color:", color)
+
+        ecwpage.locator('[id=newAppointmentBtn50]').click()
+
 
 
 
