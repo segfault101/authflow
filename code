@@ -98,7 +98,6 @@ def run(playwright: Playwright):
             pass
 
         try:
-            # ecwpage.get_by_role("button", name="Cancel").wait_for(state="visible").click()
             ecwpage.locator("button.btn.btn-xs.mt10.mr10.commonButton.ng-binding.ng-scope.btn-lgrey").wait_for(state="visible", timeout=7000)
             ecwpage.locator("button.btn.btn-xs.mt10.mr10.commonButton.ng-binding.ng-scope.btn-lgrey").click()
         except:
@@ -109,26 +108,29 @@ def run(playwright: Playwright):
 
         # If a dialog/panel opens, wait for something meaningful here (example):
         ecwpage.locator("#newApptDialog").wait_for(state="visible", timeout=15000)
-        # span = ecwpage.locator("#visit-status-lookupBtn1").nth(1)
-        # bg = span.evaluate("el => getComputedStyle(el).backgroundColor")
-        # print(bg)
 
         # All "visit status" color swatches (the colored <span> inside the left button)
         swatch = ecwpage.locator('button#visit-status-lookupBtn1 >> span.visit-color-box-disable')
-
-        count = swatch.count()
-        print("Found swatches:", count)
-        # if count < 2:
-            # raise RuntimeError(f"Only found {count} swatch(es). The 'second' one isn't in the DOM yet.")
-
+        
         # Read the computed background color of the SECOND swatch (index 1)
         color = swatch.evaluate("el => getComputedStyle(el).backgroundColor")
         print("visit status color:", color)
 
+
+        # click 'info' button
+        ecwpage.locator('[id=newAppointmentLink7]').click()
+
+        # get the first insurance in the insurance table
+        insurances_table = ecwpage.locator('[id=patient-demographicsTbl3]')
+        first_active_insurance = insurances_table.locator('tr').nth(1)
+        print(first_active_insurance.inner_text().strip())
+
+        # close info window
+        ecwpage.locator('[id=ptinfo1]').locator('[id=savePrompt-tplBtn1]').click()
+
+
+        # close appt window
         ecwpage.locator('[id=newAppointmentBtn50]').click()
-
-
-
 
     ecwpage.pause()  # keep for debugging; remove for CI
     browser.close()
